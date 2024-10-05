@@ -2,7 +2,7 @@
   "name": "rsvpadmin",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nik8singh.github.io/rsvpadmin",
+  "homepage": "http://nik8singh.github.io/rsvpadmin",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
