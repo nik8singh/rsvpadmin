@@ -1,6 +1,6 @@
 import './App.css';
 import {rsvpApiEndpoint} from "./config";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 function App() {
 
   const [paathData, setPaathData] = useState({
@@ -23,6 +23,7 @@ function App() {
 
   window.fetch(`${rsvpApiEndpoint}/PaathRsvp`, {
     method: "GET",
+      mode:"cors",
     headers: {
       'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -44,6 +45,8 @@ function App() {
 
   window.fetch(`${rsvpApiEndpoint}/PartyRsvp`, {
     method: "GET",
+            mode:"cors",
+
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -65,6 +68,8 @@ function App() {
 
     window.fetch(`${rsvpApiEndpoint}/PartyRsvp/Declined`, {
     method: "GET",
+              mode:"cors",
+
     headers: {
       'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -86,6 +91,8 @@ function App() {
 
       window.fetch(`${rsvpApiEndpoint}/PaathRsvp/Declined`, {
     method: "GET",
+                mode:"cors",
+
     headers: {
       'Accept': 'application/json',
         'Content-Type': 'application/json',
