@@ -26,7 +26,6 @@ function App() {
     headers: {
       'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -48,7 +47,6 @@ function App() {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -70,7 +68,6 @@ function App() {
     headers: {
       'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -92,7 +89,6 @@ function App() {
     headers: {
       'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
