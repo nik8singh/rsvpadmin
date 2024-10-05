@@ -24,7 +24,9 @@ function App() {
   window.fetch(`${rsvpApiEndpoint}/PaathRsvp`, {
     method: "GET",
     headers: {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -44,7 +46,9 @@ function App() {
   window.fetch(`${rsvpApiEndpoint}/PartyRsvp`, {
     method: "GET",
     headers: {
-      'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -64,7 +68,9 @@ function App() {
     window.fetch(`${rsvpApiEndpoint}/PartyRsvp/Declined`, {
     method: "GET",
     headers: {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -84,7 +90,9 @@ function App() {
       window.fetch(`${rsvpApiEndpoint}/PaathRsvp/Declined`, {
     method: "GET",
     headers: {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
     credentials: 'same-origin'
   }).then(
@@ -101,89 +109,6 @@ function App() {
         console.log("Error:-S", err);
       });
 
-  //     FILTER LIST OF NON-RESPONSIVE USERS
-
-    const [yetToRsvp, setYetToRsvp] = useState([]);
-
-  const staticList = [
-    ["Mahika"],
-    ["Arshiya"],
-    ["Bond", "Seema", "Sukhpal"],
-    ["Shivani", "Avinash"],
-    ["Ankur Bhardwaj", "Ruchi Joshi", "Sarthak Kaushik"],
-    ["Anant", "Esther"],
-    ["Ajay", "Avalon"],
-    ["Puneet"],
-    ["Nidhi", "Faraaz", "Anum"],
-    ["Akanksha", "ru ru", "ruru"],
-    ["Muskan"],
-    ["Saurabh Sharma"],
-    ["Jagjot"],
-    ["Jashandeep"],
-    ["Ujjwal"],
-    ["Harry"],
-    ["Shikha"],
-    ["Romeda"],
-    ["Aparna"],
-    ["Jaswanth"],
-    ["Sahil"],
-    ["Saloni", "Ranawat"],
-    ["Oza", "Zaheen"],
-    ["Harshit"],
-    ["Gazal"],
-    ["Varuna", "Sushant"],
-    ["Shirish"],
-    ["Priyanka", "Solanki", "Surender"],
-    ["Akshay", "mittal", "Aakansha"],
-    ["Mahima", "Nitish"],
-    ["Muskaan Bhardwaj", "Amit Bhardwaj"],
-    ["Preena", "Gagan Gujral"],
-    ["Aman Singh", "Medha"],
-    ["Rohit"],
-    ["Akshat"],
-    ["Aakanksha"],
-    ["Gagan"],
-    ["Danish", "Kia"],
-    ["Sam", "Vivek"],
-    ["Vardha", "Shivam"],
-    ["Sourabh"],
-    ["Pranav"],
-    ["Kavita", "Ayush"],
-    ["Anshuman"],
-    ["Ritika"],
-    ["Trisha"],
-    ["Akash"],
-    ["Jacky"],
-  ];
-
- const filterYetToRsvp = (yesRsvpList, noRsvpList) => {
-    const allRsvpNames = [...yesRsvpList.map(person => person.name), ...noRsvpList.map(person => person.name)];
-
-    // Function to check if a name or its variations exist in the RSVP response
-    const nameExistsInRsvp = (nameVariations, rsvpNames) => {
-      return nameVariations.some(variation =>
-        rsvpNames.some(rsvpName => rsvpName.toLowerCase().includes(variation.toLowerCase()))
-      );
-    };
-
-    const peopleYetToRsvp = staticList.filter(nameVariations =>
-      !nameExistsInRsvp(nameVariations, allRsvpNames)
-    ).map(nameVariations => nameVariations[0]); // Only keep the first name of each person
-
-    setYetToRsvp(peopleYetToRsvp);
-  };
-
-  useEffect(() => {
-    // Assuming your fetch logic that fetches the RSVP data:
-    const fetchRsvpData = () => {
-      const yesRsvp = paathData.YesRsvp.concat(partyData.YesRsvp);
-      const noRsvp = paathDeclined.NoRsvp.concat(partyDeclined.NoRsvp);
-
-      filterYetToRsvp(yesRsvp, noRsvp);
-    };
-
-    fetchRsvpData();
-  }, []);
 
 
   return (
@@ -248,17 +173,7 @@ function App() {
                   </ul>
               </div>
           </div>
-          {/* Yet to RSVP Section */}
-          <div className="event-container">
-              <h2>People Yet to RSVP</h2>
-              <div className="scrollable-container">
-                  <ul>
-                      {yetToRsvp.map((person, index) => (
-                          <li key={index}>{person}</li>
-                      ))}
-                  </ul>
-              </div>
-          </div>
+
       </div>
 
 
