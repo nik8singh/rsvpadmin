@@ -113,7 +113,7 @@ function App() {
 
   return (
       <div className="admin-container">
-          <h1>Admin Panel</h1>
+          <h1>RSVP Admin Panel</h1>
 
           {/* Paath Event Yes RSVP */}
           <div className="event-container green">
