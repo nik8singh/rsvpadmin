@@ -146,7 +146,7 @@ function App() {
           <ul>
             {paathData.YesRsvp.map((person, index) => (
               <li className="green" key={index}>
-                {person.name} - {person.paathHeadcount} people
+                {person.name} - {person.paathHeadcount} people - {person.email}
               </li>
             ))}
           </ul>
@@ -164,7 +164,7 @@ function App() {
           <ul>
             {partyData.YesRsvp.map((person, index) => (
               <li className="green" key={index}>
-                {person.name} - {person.partyHeadcount} people
+                {person.name} - {person.partyHeadcount} people - {person.email}
               </li>
             ))}
           </ul>
